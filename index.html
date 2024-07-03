@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Date Timeline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+SC:wght@300;400;500;600;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Parisienne&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+SC:wght@300;400;500;600;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="image-card">
+        <img id="carousel" src="images/card-image-1.jpg" alt="">
+        <img class="flower" src="images/flower-1.png" alt="">
+        <img class="flower-2" src="images/flower-2.webp" alt="">
+      </div>
+      <div class="text">
+        <h2>Special day, special person!</h2>
+        <p class="start"></p>
+        <p class="message"></p>
+        <p class="end" style="margin-bottom: 0;"></p>
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-section">
+    <div class="title">
+      <h2 class="sub-title left">Our</h2>
+      <h1 class="main-title">Birthday Date</h1>
+      <h2 class="sub-title right">Timeline</h2>
+      <br>
+      <h2 class="sub-title time" style="margin-top: 1.5rem;">14 / 07 / 2024</h2>
+    </div>
+
+    <div class="timeline">
+      <ul>
+        <li>
+          <div class="right_content slide-right">
+            <h2>8:00 AM</h2>
+            <p>Có mặt tại nhà em bé, chuẩn bị sẵn sàng cho chuyến đi.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="right_content slide-left">
+            <h2>8:45 AM</h2>
+            <p>Tận hưởng bầu không khí tại La Jolie Cafe, chụp cho em bé những bức hình thật đẹp.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="right_content slide-right">
+            <h2>13:00 PM</h2>
+            <p>Trải nghiệm ẩm thực tại bún bò Hương Giang, nạp lại năng lượng.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="right_content slide-left">
+            <h2>14:00 PM</h2>
+            <p>Checkin tại homestay, nghỉ ngơi sau một buổi sáng năng suất.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="right_content slide-right">
+            <h2>18:00 PM</h2>
+            <p>Cùng nhau nấu ăn, thưởng thức bữa tối.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="right_content slide-left">
+            <h2>20:00 PM</h2>
+            <p>Movie and Chill (About Time - 2013)
+            </p>
+          </div>
+        </li>
+        <div style="clear:both;"></div>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const textElements = [{
+          selector: '.start',
+          text: 'Chào cô công chúa nhỏ của anh!\n\n'
+        },
+        {
+          selector: '.message',
+          text: 'Thời gian trôi qua nhanh thật nhỉ, đã hơn hai năm kể từ khi chúng ta bắt đầu hành trình yêu thương này. Hai năm chưa phải là một chặng đường quá ngắn hay quá dài nhưng đối với anh, đó là khoảng thời gian đầy kỷ niệm đẹp và hạnh phúc. Một năm nữa chúng mình bên nhau và ngay tại thời điểm này, hôm nay là một ngày đặc biệt đối với em và anh. Anh mong rằng những gì tốt đẹp nhất sẽ xảy đến với em. Chúc em ngày càng xinh đẹp, ngày càng rạng rỡ, ngày càng tự tin. Và luôn nhớ rằng trong mắt anh em luôn là nàng thơ đẹp nhất...!\n\n'
+        },
+        {
+          selector: '.end',
+          text: 'Your Love\n'
+        },
+        {
+          selector: '.text p:last-of-type',
+          text: 'Cún ♡\n'
+        },
+      ];
+
+      let currentIndex = 0;
+      let currentText = '';
+      let element = null;
+      let charIndex = 0;
+
+      function type() {
+        if (!element && currentIndex < textElements.length) {
+          element = document.querySelector(textElements[currentIndex].selector);
+          currentText = textElements[currentIndex].text;
+          charIndex = 0;
+        }
+
+        if (element && charIndex < currentText.length) {
+          let currentChar = currentText.charAt(charIndex);
+          element.textContent += currentChar;
+          charIndex++;
+
+          let delay = 35;
+          if (currentChar === ',' || currentChar === '.') {
+            delay = 300; // dừng lại 500ms sau dấu , hoặc .
+          }
+          setTimeout(type, delay);
+        } else if (currentIndex < textElements.length) {
+          currentIndex++;
+          element = null;
+          setTimeout(type, 500);
+        }
+      }
+
+      type();
+    });
+
+    const images = [
+      'images/card-image-2.jpg',
+      'images/card-image-3.jpg',
+      'images/card-image-1.jpg'
+    ];
+
+    let currentIndex = 0;
+    const imgElement = document.getElementById('carousel');
+
+    function changeImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      imgElement.style.opacity = 0;
+
+      setTimeout(() => {
+        imgElement.src = images[currentIndex];
+        imgElement.style.opacity = 1;
+      }, 1000); // thời gian chuyển đổi opacity (1s)
+    }
+
+    setInterval(changeImage, 6000); // thời gian chờ trước khi chuyển đổi ảnh (3s)
+
+    const imageCard = document.querySelector(".image-card")
+    const left = document.querySelector(".left")
+    const mainTitle = document.querySelector(".main-title")
+    const right = document.querySelector(".right")
+    const time = document.querySelector(".time")
+    const rightReveal = document.querySelectorAll(".slide-right");
+    const leftReveal = document.querySelectorAll(".slide-left");
+
+    var slideRight = {
+      distance: "70%",
+      origin: "left",
+      easing: "ease",
+      duration: 1500,
+      opacity: 0,
+      reset: true
+    };
+    var slideLeft = {
+      distance: "70%",
+      origin: "right",
+      easing: "ease",
+      duration: 1500,
+      reset: true,
+      opacity: 0
+    };
+    var reveal = {
+      easing: "ease",
+      duration: 1500,
+      reset: true,
+      opacity: 0
+    };
+
+    ScrollReveal().reveal(imageCard, reveal);
+    ScrollReveal().reveal(left, reveal);
+    ScrollReveal().reveal(mainTitle, reveal);
+    ScrollReveal().reveal(right, reveal);
+    ScrollReveal().reveal(time, reveal);
+
+    ScrollReveal().reveal(rightReveal, slideRight);
+    ScrollReveal().reveal(leftReveal, slideLeft);
+  </script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 300;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body{
+  background-color: #F8F6F5;
+}
+
+
+.header {
+  background-image: url("images/anh-iu.png");
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.498);
+  color: white;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.content {
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.image-card {
+  width: 25rem;
+  height: auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  position: relative;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1rem 5rem 1rem;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+
+.flower {
+  width: 250px !important;
+  height: auto !important;
+  padding: 0 !important;
+  position: absolute;
+  bottom: 0;
+  left: -9rem;
+}
+
+.flower-2 {
+  width: 200px !important;
+  height: auto !important;
+  padding: 0 !important;
+  position: absolute;
+  bottom: 0;
+  right: -2rem;
+  rotate: 15deg;
+}
+
+.text {
+  width: 40vw;
+}
+
+.text h2 {
+  font-family: "Parisienne", cursive;
+  font-weight: 300;
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.text p {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.timeline-section{
+  padding-top: 5rem;
+  background-color: #F8F6F5;
+}
+.end,
+.start {
+  margin: 1rem 0;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+}
+
+.sub-title {
+  display: inline-block;
+  font-family: "Parisienne", cursive;
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+.left {
+  transform: translateX(-300%);
+}
+.right {
+  transform: translateX(120%);
+}
+.main-title {
+  font-family: "Cormorant SC";
+  font-weight: 300;
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+/* Timeline */
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  width: 2px;
+  top: -20px;
+  background: black; /*  Màu thanh timeline  */
+  z-index: 1;
+}
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  width: 1000px;
+  padding: 50px 0;
+}
+
+.timeline ul {
+  margin: 0;
+  padding: 0;
+}
+
+.timeline ul li {
+  list-style: none;
+  box-sizing: border-box;
+  line-height: normal;
+  position: relative;
+  width: 50%;
+  padding: 40px 70px;
+}
+
+.timeline ul li .right_content h2 {
+  color: #030200;
+  padding: 0px 2px 18px 0px;
+}
+.timeline ul li:nth-child(odd) {
+  float: left;
+  text-align: right;
+  clear: both;
+}
+
+.timeline ul li:nth-child(even) {
+  float: right;
+  text-align: left;
+  clear: both;
+}
+
+
+.timeline ul li:nth-child(odd):before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #030200;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+  right: -6px;
+  top: 40px;
+  z-index: 1;
+}
+
+.timeline ul li:nth-child(even):before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #030200;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+  left: -4px;
+  top: 40px;
+}
+
+
+@media (max-width: 1000px) {
+  .timeline {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .timeline {
+    width: 100%;
+  }
+  .timeline:before {
+    left: 20px;
+  }
+  .timeline ul li:nth-child(odd),
+  .timeline ul li:nth-child(even) {
+    width: 100%;
+    text-align: left;
+    padding-left: 50px;
+  }
+
+  .timeline ul li:nth-child(odd):before {
+    top: -18px;
+    left: 16px;
+  }
+  .timeline ul li:nth-child(even):before {
+    top: -18px;
+    left: 16px;
+  }
+
+  .timeline ul li:nth-child(odd) .left_content,
+  .timeline ul li:nth-child(even) .left_content {
+    top: -30px;
+    left: 50px;
+    right: inherit;
+  }
+}
+
+.footer{
+  text-align: center;
+}
