@@ -95,6 +95,9 @@
         <div style="clear:both;"></div>
       </ul>
     </div>
+    <div class="name">
+      Hanh Nguyen & Manh Cuong
+    </div>
   </div>
 
   <script src="https://unpkg.com/scrollreveal"></script>
@@ -183,7 +186,7 @@
       const text = document.querySelector(".text")
       const h2 = text.querySelector("h2")
       const p = text.querySelectorAll("p")
-
+      const name = document.querySelector(".name")
       var slideRight = {
         distance: "70%",
         origin: "left",
@@ -217,6 +220,7 @@
         reset: true,
         opacity: 0
       });
+
       setTimeout(() => {
         type(),
         ScrollReveal().reveal(p, {
@@ -232,6 +236,7 @@
 
       ScrollReveal().reveal(rightReveal, slideRight);
       ScrollReveal().reveal(leftReveal, slideLeft);
+      ScrollReveal().reveal(name, reveal);
     });
   </script>
 
